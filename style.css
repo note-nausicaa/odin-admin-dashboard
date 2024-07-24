@@ -2,28 +2,140 @@ body {
     display: grid;
     height: 100vh;
     width: 100vh;
-    grid-template-columns: 25% auto;
+    grid-template-columns: 30% auto;
     font-family: 'Courier New', Courier, monospace;
-}
-
-img {
-    object-fit: scale-down;
+    margin: 0;
 }
 
 .sidebar {
     background-color: pink;
     color: white;
-    margin-left: 15vh;
     display: grid;
-    grid-template-rows: repeat(auto-fit, 75px);
+    grid-template-rows: 8% repeat(9, 50px);
+    row-gap: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    justify-content: left;
 }
 
 .sidebar > button {
-    display: grid;
-    grid-template-columns: 15% auto;
-    font-size: 1rem;
     font-family: inherit;
+    display: grid;
+    grid-template-columns: 30% auto;
     border: none;
     background-color: inherit;
-    align-content: center;
+    padding-right: 10px;
+    align-self: center;
+    align-items: center;
+    text-align: left;
+    color: inherit;
+    column-gap: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+button.dashboard {
+    font-size: 22px;
+}
+
+.sidebar path {
+    fill: white;
+}
+
+.main-container {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 20% auto;
+    padding-left: 10px;
+}
+
+.header {
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.search-wrapper {
+   grid-row: 1;
+   display: grid;
+   grid-template-columns: 8% 60% 8% 8% auto;
+   column-gap: 10px;
+   padding: 13px;
+   align-items: center;
+}
+
+input {
+    grid-column: 2;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    content: icon;
+}
+
+.user-container {
+    display: grid;
+    grid-template-columns: 10% 40% 10% 10% 10%;
+    column-gap: 10px;
+}
+
+.search-wrapper path {
+    fill: pink;
+}
+
+.user-name {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.greeting {
+    font-size: 12px;
+}
+
+.user-container > button {
+    background-color: pink;
+    color: white;
+    text-align: center;
+    font-family: inherit;
+    border-radius: 10px;
+}
+
+.dashboard-wrapper {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 60% auto;
+    column-gap: 20px;
+}
+
+.project-wrapper {
+    display: grid;
+    padding: 5px;
+    padding-top: 10px;
+    grid-template-rows: auto 30% 30% 30%;
+    grid-template-columns: auto auto;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.title {
+    grid-column: span 2;
+    grid-row: 1;
+}
+
+.card {
+    border: pink solid 3px;
+}
+
+.trending-title {
+    font-size: 14px;
+}
+
+.right-wrapper {
+    display: grid;
+    padding: 5px;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 5px;
 }

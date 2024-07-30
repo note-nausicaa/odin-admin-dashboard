@@ -95,7 +95,7 @@ body {
     box-shadow: 9px 0px 0px rgb(255, 226, 226);
 }
 
-.name {
+.header > .name {
     grid-column: 8 / 10;
     justify-self: end;
     font-weight: bold;
@@ -150,6 +150,7 @@ img {
     background: linear-gradient(rgb(255, 219, 219), rgb(255, 226, 226), rgb(255, 203, 211), rgb(255, 210, 217));
     max-height: 3.2vh;
     margin-left: 1vh;
+    box-shadow: 5px 0px 0px rgb(255, 219, 219);
     border: solid 1.5px pink;
     max-width: 500px;
     border-radius: 20px;
@@ -160,11 +161,15 @@ img {
 
     &:hover {
         transition: 0.8s;
-        box-shadow: inset 0 0 3px white, 0px 0px 3px pink;
+        box-shadow: inset 0 0 3px white, 0px 0px 3px pink, 5px 0px 0px rgb(255, 219, 219);
+    }
+
+    &:focus{
+        border: solid 1.5px rgb(255, 130, 151);
     }
 
     &:active {
-        border: solid 1.5px rgb(255, 130, 151);
+        border: none;
     }
 }
 
@@ -361,25 +366,36 @@ img.small-icon {
 }
 
 .card.announcement {
-    padding: 1vh;
+    padding: 0.8vh;
     overflow: hidden;
     font-size: 0.5rem;
     display: grid;
     grid-template-rows: repeat(6, auto);
     grid-template-columns: none;
     row-gap: 0;
+    margin-right: 1vh;
+
 }
 
 .card > p {
     grid-column: span 4;
+    font-weight: lighter;
+    font-size: 0.75rem;
 }
 
 .card > p.title.announcement-one,
 p.title.announcement-two,
 p.title.announcement-three {
+    color: black;
     place-self: end start;
     font-weight: bolder;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5vh;
+}
+
+.card > p.para.announcement-two,
+p.para.announcement-one {
+    border-bottom: 3px solid pink;
 }
 
 .title.announcement-one {
@@ -406,3 +422,47 @@ p.title.announcement-three {
     grid-row: 6;
 }
 
+p.para {
+    color: grey;
+}
+
+.card.trending {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 5vh auto;
+    padding: 1vh;
+    row-gap: 0;
+    column-gap: 1.4vh;
+    margin-right: 0.5vh;
+}
+
+.card.trending > img {
+    grid-column: 1;
+    place-self: center stretch;
+    height: 5vh;
+    width: 5vh;
+}
+
+.card.trending > div {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto auto;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+
+.card.trending > div > p.name {
+    grid-row: 1;
+    align-self: end;
+    margin: 0;
+    font-weight: bold;
+}
+
+.card.trending > div > p.subtitle {
+    font-weight: lighter;
+    align-self: start;
+    justify-self: start;
+    grid-row: 2;
+    margin: 0;
+    color: grey;
+}
